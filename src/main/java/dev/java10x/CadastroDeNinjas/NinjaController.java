@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController // Indicar para a classe que é uma classe CONTROLLER
 @RequestMapping // Indicar que a classe vai ter rotas
-public class Controller {
+public class NinjaController {
 
     @GetMapping("/boasvindas") // Puxar Informações
     public String boasVindas() {
