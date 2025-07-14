@@ -14,12 +14,19 @@ import lombok.NoArgsConstructor;
 public class NinjaModel {
 
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) //Falar que o atributo é um ID // Gerar ID automaticamente
+    @Column (name = "id") // Coloca o nome da COLUNA no banco de dados
     private Long id;
+
+    @Column (name = "nome") // Coloca o nome da COLUNA no banco de dados
     private String nome;
 
     @Column(unique = true) // A coluna (email) não poderar ter emails repetidos
     private String email;
 
+    @Column (name = "img_url") // Coloca o nome da COLUNA no banco de dados
+    private String imgUrl;
+
+    @Column (name = "idade") // Coloca o nome da COLUNA no banco de dados
     private int idade;
 
     @ManyToOne //ManyToOne Um ninja tem uma unica missao
