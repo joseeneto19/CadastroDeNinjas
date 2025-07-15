@@ -3,7 +3,7 @@ package dev.java10x.CadastroDeNinjas.Ninjas;
 import org.springframework.web.bind.annotation.*;
 
 @RestController // Indicar para a classe que é uma classe CONTROLLER
-@RequestMapping // Indicar que a classe vai ter rotas
+@RequestMapping("ninjas") // Indicar que a classe vai ter rotas
 public class NinjaController {
 
     @GetMapping("/boasvindas") // Puxar Informações
@@ -18,12 +18,12 @@ public class NinjaController {
     }
 
    // Mostrar todos os ninjas (READ)
-    @GetMapping("/todos") // Metodo GET para mostrar ninjas
+    @GetMapping("/listar") // Metodo GET para mostrar ninjas
     public String todos() {
         return "Todos";
     }
    // Mostrar ninja por ID (READ)
-    @GetMapping("/todosID") // Metodo GET para mostrar ninjas por ID
+    @GetMapping("/listarID") // Metodo GET para mostrar ninjas por ID
     public String todosID() {
         return "TodosID";
     }
