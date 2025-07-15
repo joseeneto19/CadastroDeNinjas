@@ -2,9 +2,19 @@ package dev.java10x.CadastroDeNinjas.Ninjas;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController // Indicar para a classe que é uma classe CONTROLLER
-@RequestMapping("ninjas") // Indicar que a classe vai ter rotas
+@RequestMapping("/ninjas") // Indicar que a classe vai ter rotas
 public class NinjaController {
+
+    // Injetar dependencia do NinjaService
+    private NinjaService ninjaService;
+
+    // Construtor da dependencia
+    public NinjaController(NinjaService ninjaService) {
+        this.ninjaService = ninjaService;
+    }
 
     @GetMapping("/boasvindas") // Puxar Informações
     public String boasVindas() {
@@ -19,8 +29,8 @@ public class NinjaController {
 
    // Mostrar todos os ninjas (READ)
     @GetMapping("/listar") // Metodo GET para mostrar ninjas
-    public String todos() {
-        return "Todos";
+    public List<NinjaModel> listarNinjas() {
+        return ninjaService.listarNinjas();
     }
    // Mostrar ninja por ID (READ)
     @GetMapping("/listarID") // Metodo GET para mostrar ninjas por ID
