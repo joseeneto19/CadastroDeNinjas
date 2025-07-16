@@ -32,4 +32,10 @@ public class MissoesService {
         Optional <MissoesModel> missoesModel = missoesRepository.findById(id);
         return missoesModel.orElse(null);
     }
+
+    // Deletar missao
+
+    public void deletarMissao(Long id) {
+        missoesRepository.deleteById(id);
+    }
 }
