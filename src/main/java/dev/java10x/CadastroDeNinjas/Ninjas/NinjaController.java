@@ -23,8 +23,8 @@ public class NinjaController {
 
     // Adicionar ninja (CREATE)
     @PostMapping("/criar") // Metodo POST para a criação de ninja
-    public String criarNinja() {
-        return "Criado com sucesso!";
+    public NinjaModel criarNinja(@RequestBody /* Indica que o usuário mande um BODY */ NinjaModel ninja) {
+        return ninjaService.criarNinja(ninja);
     }
 
    // Mostrar todos os ninjas (READ)
