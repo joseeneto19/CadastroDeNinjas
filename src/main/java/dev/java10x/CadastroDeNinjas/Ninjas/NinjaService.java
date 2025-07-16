@@ -32,4 +32,9 @@ public class NinjaService {
         return ninjaRepository.save(ninja);
     }
 
+    // Deletar ninja - Tem que ser um metodo VOID
+    public void deletarNinja(Long id) {
+        ninjaRepository.deleteById(id);
+    }
+
 }
