@@ -29,6 +29,9 @@ public class NinjaModel {
     @Column (name = "idade") // Coloca o nome da COLUNA no banco de dados
     private int idade;
 
+    @Column (name = "rank")
+    private String rank;
+
     @ManyToOne //ManyToOne Um ninja tem uma unica missao
     @JoinColumn(name = "missoes_id") // Foreing Key ou chave estrangeira
     private MissoesModel missoes;
